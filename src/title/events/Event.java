@@ -17,6 +17,13 @@ public class Event implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
-        player.sendMessage("test message");
+        String title = this.getFormatMessage(0, "{name}", player.getName());
+        String sub_title = this.getFormatMessage(1, "{name}", player.getName());
+
+        player.sendTitle(title, sub_title, 15, 60, 30);
+    }
+
+    public String getFormatMessage(int msg_index, String format, String replace) {
+        return this.main.messages[msg_index].replace(format, replace);
     }
 }
