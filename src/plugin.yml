@@ -1,0 +1,5 @@
+name: join-title
+main: title.Main
+version: 1
+author: NodeWillDev
+api: 1.0.14
